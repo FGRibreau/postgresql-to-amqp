@@ -1,4 +1,4 @@
-PostgreSQL to AMQP
+PostgreSQL to AMQP [![Cargo version](https://img.shields.io/crates/v/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp)
 ==================
 
 PostgreSQL to AMQP, forward PostgreSQL notifications to an AMQP queue.
