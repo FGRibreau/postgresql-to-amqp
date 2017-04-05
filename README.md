@@ -11,6 +11,9 @@ PostgreSQL to AMQP, forward PostgreSQL notifications to an AMQP queue.
 cargo install postgresql-to-amqp
 ```
 
+<p align="center"><img src="https://cloud.githubusercontent.com/assets/138050/24724213/9c512220-1a4a-11e7-8a3e-9b8ad0945f51.gif"/></p>
+
+
 ## Configuration
 
 Configuration is done through environment variables:
