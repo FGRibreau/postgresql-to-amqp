@@ -44,7 +44,13 @@ Forwarding Notification { process_id: 31694, channel: "foo", payload: "payload" 
 
 ## Todo
 
-- [ ] Refactor
-- [ ] Docker support
+I will happily accept PRs for this:
+
+- [ ] AMQP authentication support
+- [ ] Support JSON message
+- [ ] Add original channel as message property
+- [ ] Add postgresql-to-amqp `version` as message property
+- [ ] Let environment variables specify additional message properties
+- [x] Docker support
 - [ ] Kubernetes support
-- [ ] Make a first release with tests
+- [ ] Make a first major release with tests

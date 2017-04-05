@@ -77,7 +77,7 @@ fn main() {
                                     config.amqp_queue_name.as_str(),
                                     // @todo we might want to send it as JSON (configurable)
                                     // https://doc.rust-lang.org/1.12.0/std/fmt/
-                                    format!("{}! {}!", notification.channel, notification.payload).as_bytes(),
+                                    format!("{}!", notification.payload).as_bytes(),
                                     &BasicPublishOptions::default(),
                                     // @todo make this configurable through environment variables
                                     BasicProperties::default().with_user_id("guest".to_string()).with_reply_to("foobar".to_string())
