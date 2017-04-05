@@ -1,4 +1,4 @@
-PostgreSQL to AMQP [![Cargo version](https://img.shields.io/crates/v/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp)
+PostgreSQL to AMQP [![Cargo version](https://img.shields.io/crates/v/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Crates.io](https://img.shields.io/crates/l/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Crates.io](https://img.shields.io/crates/d/postgresql-to-amqp.svg)]() [![Docker Automated build](https://img.shields.io/docker/automated/fgribreau/postgresql-to-amqp.svg)]() [![Docker Pulls](https://img.shields.io/docker/pulls/fgribreau/postgresql-to-amqp.svg)]() [![Docker Stars](https://img.shields.io/docker/stars/fgribreau/postgresql-to-amqp.svg)]()
 ==================
 
 PostgreSQL to AMQP, forward PostgreSQL notifications to an AMQP queue.
@@ -14,7 +14,7 @@ Configuration is done through environment variables:
 - **POSTGRESQL_URI**: e.g. `postgresql://username:password@domain.tld:port/database`
 - **POSTGRESQL_CHANNEL**: e.g. `foo`
 - **AMQP_HOST_PORT**: e.g. `127.0.0.1:5672`
-- **AMQP_QUEUE_NAME**: e.g. `queueName` 
+- **AMQP_QUEUE_NAME**: e.g. `queueName`
 
 ## Usage
 
