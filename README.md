@@ -2,7 +2,7 @@
 
 #### Forward PostgreSQL `pg_notify` notifications to an AMQP queue
 
-[![Cargo version](https://img.shields.io/crates/v/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Crates.io](https://img.shields.io/crates/l/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Crates.io](https://img.shields.io/crates/d/postgresql-to-amqp.svg)]() [![Docker Automated build](https://img.shields.io/docker/automated/fgribreau/postgresql-to-amqp.svg)]() [![Docker Pulls](https://img.shields.io/docker/pulls/fgribreau/postgresql-to-amqp.svg)]() [![Docker Stars](https://img.shields.io/docker/stars/fgribreau/postgresql-to-amqp.svg)]()
+[![Cargo version](https://img.shields.io/crates/v/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Crates.io](https://img.shields.io/crates/l/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Crates.io](https://img.shields.io/crates/d/postgresql-to-amqp.svg)](https://crates.io/crates/postgresql-to-amqp) [![Docker Automated build](https://img.shields.io/docker/automated/fgribreau/postgresql-to-amqp.svg)](https://hub.docker.com/r/fgribreau/postgresql-to-amqp) [![Docker Pulls](https://img.shields.io/docker/pulls/fgribreau/postgresql-to-amqp.svg)](https://hub.docker.com/r/fgribreau/postgresql-to-amqp) [![Docker Stars](https://img.shields.io/docker/stars/fgribreau/postgresql-to-amqp.svg)](https://hub.docker.com/r/fgribreau/postgresql-to-amqp)
 ==================
 
 PostgreSQL to AMQP, forward PostgreSQL notifications to an AMQP queue.
