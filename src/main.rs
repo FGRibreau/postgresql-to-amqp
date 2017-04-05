@@ -22,7 +22,6 @@ use postgres::{Connection, TlsMode};
 use fallible_iterator::FallibleIterator;
 
 fn main() {
-    //
     env_logger::init().unwrap();
 
     // load configuration
@@ -31,8 +30,9 @@ fn main() {
     // create the reactor
     let mut core = Core::new().unwrap();
     let handle = core.handle();
-    let amqp_addr = config.amqp_host_port.parse().expect("amqp_host_port should be in format '127.0.0.1:5672'");
 
+
+    let amqp_addr = config.amqp_host_port.parse().expect("amqp_host_port should be in format '127.0.0.1:5672'");
     let pg_conn = Connection::connect(config.postgresql_uri.clone(), TlsMode::None).expect("Could not connect to PostgreSQL");
 
     core.run(
@@ -62,7 +62,12 @@ fn main() {
                     let mut it = notifications.blocking_iter();
 
                     println!("Waiting for notifications...");
-                    loop {
+
+                    // could not use 'loop' here because it does not compile in --release mode
+                    // since Ok() is unreachable.
+                    #[allow(while_true)]
+                    while true {
+
                         // it.next() -> Result<Option<Notification>>
                         match it.next() {
                             Ok(Some(notification)) => {
@@ -70,9 +75,11 @@ fn main() {
                                 println!("Forwarding {:?} to queue {:?}", notification, config.amqp_queue_name.as_str());
                                 channel.basic_publish(
                                     config.amqp_queue_name.as_str(),
+                                    // @todo we might want to send it as JSON (configurable)
                                     // https://doc.rust-lang.org/1.12.0/std/fmt/
                                     format!("{}! {}!", notification.channel, notification.payload).as_bytes(),
                                     &BasicPublishOptions::default(),
+                                    // @todo make this configurable through environment variables
                                     BasicProperties::default().with_user_id("guest".to_string()).with_reply_to("foobar".to_string())
                                 );
                             },
@@ -81,11 +88,12 @@ fn main() {
                         }
                     }
 
-                    Ok("Yep, but otherwise it won't compile!")
+
+                    Ok(channel)
                 })
             }).map_err(|err| {
-            println!("Could not connect: {}", err);
+            println!("Could not connect to AMQP: {}", err);
             err
         })
-    ).expect("Could not run reactor.");
+    ).expect("Could not run reactor");
 }
