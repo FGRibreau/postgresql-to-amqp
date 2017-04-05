@@ -7,12 +7,23 @@
 
 PostgreSQL to AMQP, forward PostgreSQL notifications to an AMQP queue.
 
-```
+<p align="center"><img src="https://cloud.githubusercontent.com/assets/138050/24724213/9c512220-1a4a-11e7-8a3e-9b8ad0945f51.gif"/></p>
+
+## Cargo
+
+```shell
 cargo install postgresql-to-amqp
 ```
 
-<p align="center"><img src="https://cloud.githubusercontent.com/assets/138050/24724213/9c512220-1a4a-11e7-8a3e-9b8ad0945f51.gif"/></p>
+## Docker
 
+```shell
+docker run --rm -it \
+-e POSTGRESQL_URI=postgresql://username:password@domain.tld:port/database \
+-e POSTGRESQL_CHANNEL=foo \
+-e AMQP_HOST_PORT=127.0.0.1:5672 \
+-e AMQP_QUEUE_NAME=queueName fgribreau/postgresql-to-amqp
+```
 
 ## Configuration
 
