@@ -1,6 +1,6 @@
 [package]
 name = "postgresql-to-amqp"
-version = "0.1.2-pre"
+version = "0.1.2"
 authors = ["FG Ribreau <github@fgribreau.com>"]
 
 # A short blurb about the package. This is not rendered in any format when
