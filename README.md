@@ -9,7 +9,7 @@ cargo install postgresql-to-amqp
 
 ## Configuration
 
-Configuration is done through environment variables
+Configuration is done through environment variables:
 
 - **POSTGRESQL_URI**: e.g. `postgresql://username:password@domain.tld:port/database`
 - **POSTGRESQL_CHANNEL**: e.g. `foo`
@@ -36,3 +36,11 @@ The forwarder will log and forward the notification to the amqp queue:
 ```
 Forwarding Notification { process_id: 31694, channel: "foo", payload: "payload" } to queue "queueName"
 ```
+
+
+## Todo
+
+- [ ] Refactor
+- [ ] Docker support
+- [ ] Kubernetes support
+- [ ] Make a first release with tests
