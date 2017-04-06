@@ -65,6 +65,7 @@ I will happily accept PRs for this:
 
 - [ ] AMQP authentication support 👻
 - [ ] Support JSON message
+- [ ] Publish to exchange
 - [ ] Add original channel as message property
 - [ ] Add postgresql-to-amqp `version` as message property
 - [ ] Let environment variables specify additional message properties
