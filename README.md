@@ -51,7 +51,7 @@ The forwarder will log and forward the notification to the amqp queue:
 Forwarding Notification { process_id: 31694, channel: "foo", payload: "payload" } to queue "queueName"
 ```
 
-## Philosophy
+## 👁 Philosophy
 
 - Low memory consumption (1,9Mo)
 - Single binary
