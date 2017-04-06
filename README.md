@@ -63,7 +63,7 @@ Forwarding Notification { process_id: 31694, channel: "foo", payload: "payload" 
 
 I will happily accept PRs for this:
 
-- [ ] AMQP authentication support 👻
+- [ ] AMQP connection string (AMQP authentication support) 👻
 - [ ] Support JSON message
 - [ ] Publish to exchange
 - [ ] Add original channel as message property
