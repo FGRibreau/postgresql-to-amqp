@@ -64,10 +64,14 @@ Forwarding Notification { process_id: 31694, channel: "foo", payload: "payload" 
 I will happily accept PRs for this:
 
 - [ ] AMQP authentication support 👻
-- [ ] Support JSON message 
+- [ ] Support JSON message
 - [ ] Add original channel as message property
 - [ ] Add postgresql-to-amqp `version` as message property
 - [ ] Let environment variables specify additional message properties
+- [ ] Handle AMQP disconnection/reconnection
+- [ ] Handle PostgreSQL disconnection/reconnection
+- [ ] Health check route
+- [ ] Metric route
 - [x] Docker support
 - [ ] Kubernetes support 😍
 - [ ] Make a first major release with tests ☝️
