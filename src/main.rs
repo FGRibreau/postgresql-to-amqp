@@ -2,7 +2,6 @@
 extern crate log;
 extern crate env_logger;
 
-extern crate amq_protocol;
 extern crate futures;
 extern crate tokio_core;
 extern crate lapin_futures as lapin;
@@ -11,12 +10,12 @@ extern crate fallible_iterator;
 
 mod app_config;
 
-use amq_protocol::types::FieldTable;
 use futures::future::Future;
 use tokio_core::reactor::Core;
 use tokio_core::net::TcpStream;
 use lapin::client::ConnectionOptions;
 use lapin::channel::{BasicPublishOptions, BasicProperties, QueueDeclareOptions};
+use lapin::types::FieldTable;
 
 use postgres::{Connection, TlsMode};
 use fallible_iterator::FallibleIterator;
@@ -74,6 +73,7 @@ fn main() {
                                 // https://github.com/sfackler/rust-postgres/blob/master/postgres-shared/src/lib.rs
                                 println!("Forwarding {:?} to queue {:?}", notification, config.amqp_queue_name.as_str());
                                 channel.basic_publish(
+                                    "",
                                     config.amqp_queue_name.as_str(),
                                     // @todo we might want to send it as JSON (configurable)
                                     // https://doc.rust-lang.org/1.12.0/std/fmt/
