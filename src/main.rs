@@ -4,16 +4,17 @@ extern crate env_logger;
 
 extern crate futures;
 extern crate tokio_core;
-extern crate lapin_futures as lapin;
+extern crate lapin_futures_rustls;
 extern crate postgres;
 extern crate fallible_iterator;
 
 mod app_config;
 
+use lapin_futures_rustls::lapin;
+use lapin_futures_rustls::AMQPConnectionRustlsExt;
+
 use futures::future::Future;
 use tokio_core::reactor::Core;
-use tokio_core::net::TcpStream;
-use lapin::client::ConnectionOptions;
 use lapin::channel::{BasicPublishOptions, BasicProperties, QueueDeclareOptions};
 use lapin::types::FieldTable;
 
@@ -30,19 +31,10 @@ fn main() {
     let mut core = Core::new().unwrap();
     let handle = core.handle();
 
-
-    let amqp_addr = config.amqp_host_port.parse().expect("amqp_host_port should be in format '127.0.0.1:5672'");
     let pg_conn = Connection::connect(config.postgresql_uri.clone(), TlsMode::None).expect("Could not connect to PostgreSQL");
 
     core.run(
-        TcpStream::connect(&amqp_addr, &handle).and_then(|stream| {
-            // connect() returns a future of an AMQP Client
-            // that resolves once the handshake is done
-            lapin::client::Client::connect(
-                stream,
-                &ConnectionOptions::default()
-            )
-        })
+        config.amqp_uri.connect(&handle)
             .and_then(|client| client.create_channel())
             .and_then(|channel| {
                 let id = channel.id;
