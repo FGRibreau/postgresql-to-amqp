@@ -38,7 +38,7 @@ include = ["src/main.rs","src/app_config.rs", "Cargo.toml"]
 
 [dependencies]
 # https://github.com/sozu-proxy/lapin-futures-tls
-lapin-futures-rustls = "^0.6"
+lapin-futures-rustls = "^0.7"
 
 # https://docs.rs/tokio-core/0.1.6/tokio_core/
 tokio-core = "0.1.6"

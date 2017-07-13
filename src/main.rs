@@ -40,7 +40,7 @@ fn main() {
                 let id = channel.id;
                 info!("created channel with id: {}", id);
 
-                channel.queue_declare(config.clone().amqp_queue_name.as_str(), &QueueDeclareOptions::default(), FieldTable::new()).and_then(move |_| {
+                channel.queue_declare(config.clone().amqp_queue_name.as_str(), &QueueDeclareOptions::default(), &FieldTable::new()).and_then(move |_| {
                     info!("channel {} declared queue {}", id, config.amqp_queue_name.as_str());
 
                     // https://www.postgresql.org/docs/7.4/static/sql-listen.html
