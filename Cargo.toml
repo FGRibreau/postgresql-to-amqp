@@ -37,12 +37,8 @@ license = "MIT"
 include = ["src/main.rs","src/app_config.rs", "Cargo.toml"]
 
 [dependencies]
-# AMQP specifications
-# https://docs.rs/amq-protocol/0.15.0/amq_protocol/
-amq-protocol = "^0.15"
-
-# https://github.com/Geal/lapin
-lapin-futures = "^0.6"
+# https://github.com/sozu-proxy/lapin-futures-tls
+lapin-futures-rustls = "^0.7"
 
 # https://docs.rs/tokio-core/0.1.6/tokio_core/
 tokio-core = "0.1.6"
@@ -61,7 +57,7 @@ env_logger = "0.4.2"
 
 # https://github.com/sfackler/rust-postgres
 # A native PostgreSQL driver for Rust.
-postgres = "0.13"
+postgres = "0.14"
 
 # https://crates.io/crates/fallible-iterator
 # Fallible iterator traits (used for iterate (blocking) through notifications)

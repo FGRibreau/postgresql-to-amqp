@@ -17,7 +17,7 @@ cargo install postgresql-to-amqp
 docker run --rm -it \
 -e POSTGRESQL_URI=postgresql://username:password@domain.tld:port/database \
 -e POSTGRESQL_CHANNEL=foo \
--e AMQP_HOST_PORT=127.0.0.1:5672 \
+-e AMQP_URI=amqp://127.0.0.1:5672/ \
 -e AMQP_QUEUE_NAME=queueName fgribreau/postgresql-to-amqp
 ```
 
@@ -27,7 +27,7 @@ Configuration is done through environment variables:
 
 - **POSTGRESQL_URI**: e.g. `postgresql://username:password@domain.tld:port/database`
 - **POSTGRESQL_CHANNEL**: e.g. `foo`
-- **AMQP_HOST_PORT**: e.g. `127.0.0.1:5672`
+- **AMQP_URI**: e.g. `amqp://127.0.0.1:5672/`
 - **AMQP_QUEUE_NAME**: e.g. `queueName`
 
 ## 🎩 Usage
@@ -35,7 +35,7 @@ Configuration is done through environment variables:
 Start the forwarder:
 
 ```bash
-POSTGRESQL_URI="postgresql://username:password@domain.tld:port/database" POSTGRESQL_CHANNEL="foo" AMQP_HOST_PORT="127.0.0.1:5672" AMQP_QUEUE_NAME="queueName" postgresql-to-amqp
+POSTGRESQL_URI="postgresql://username:password@domain.tld:port/database" POSTGRESQL_CHANNEL="foo" AMQP_URI="amqp://127.0.0.1:5672/" AMQP_QUEUE_NAME="queueName" postgresql-to-amqp
 ```
 
 
