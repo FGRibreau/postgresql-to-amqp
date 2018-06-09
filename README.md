@@ -1,3 +1,10 @@
+# :warning: Discontinued
+
+### @subzerocloud took inspiration from this project and built [pg-amqp-bridge](https://github.com/subzerocloud/pg-amqp-bridge) which now has more options, use it instead :+1:
+
+---------------------------------------------------------
+
+
 # 🚇 PostgreSQL to AMQP gateway 
 #### Forward PostgreSQL `pg_notify` notifications to an AMQP queue.
 
@@ -5,6 +12,8 @@
 ==================
 
 <p align="center"><img src="https://cloud.githubusercontent.com/assets/138050/24724213/9c512220-1a4a-11e7-8a3e-9b8ad0945f51.gif"/></p>
+
+
 
 ## ⛴ Cargo
 
