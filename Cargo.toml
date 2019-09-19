@@ -53,7 +53,7 @@ log = "0.3.7"
 
 # http://rust-lang-nursery.github.io/log/env_logger/
 # A logger configured via an environment variable which writes to standard error.
-env_logger = "0.4.2"
+env_logger = "0.6.2"
 
 # https://github.com/sfackler/rust-postgres
 # A native PostgreSQL driver for Rust.
