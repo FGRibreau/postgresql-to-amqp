@@ -49,7 +49,7 @@ futures = "0.1.12"
 
 # A lightweight logging facade for Rust
 # https://doc.rust-lang.org/log/log/index.html
-log = "0.3.7"
+log = "0.4.8"
 
 # http://rust-lang-nursery.github.io/log/env_logger/
 # A logger configured via an environment variable which writes to standard error.
